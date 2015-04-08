@@ -56,8 +56,6 @@ app.all('*', function(req, res, next) {
         var pageList = raneto.getPages(slug),
             filePath = path.resolve(raneto.config.content_dir + slug);
 
-	console.log(filePath);
-
 	if(!fs.existsSync(filePath)) filePath += '.md';
 
         if(slug == '/index' && !fs.existsSync(filePath)){
