@@ -34,4 +34,8 @@ var config = {
 
 };
 
+//if we are in azure, back up one dir.
+if(process.env.azure)
+    config.content_dir = '../content/';
+
 module.exports = config;
