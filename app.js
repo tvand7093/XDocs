@@ -1,3 +1,4 @@
+
 var express = require('express'),
     path = require('path'),
     fs = require('fs'),
@@ -53,10 +54,7 @@ app.all('*', function(req, res, next) {
         if(slug == '/') slug = '/index';
 
         var pageList = raneto.getPages(slug),
-            filePath = path.normalize(raneto.config.content_dir + slug);
-
-        if(slug != '/index')
-	    filePath = path.normalize(__basedir + "/content/" + slug);
+            filePath = path.resolve(raneto.config.content_dir + slug);
 
 	if(!fs.existsSync(filePath)) filePath += '.md';
 
