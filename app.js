@@ -14,6 +14,7 @@ var express = require('express'),
     config = require('./config'),
     app = express();
 
+
 // Setup views
 app.set('views', path.join(__dirname, 'views'));
 app.set('layout', 'layout');
